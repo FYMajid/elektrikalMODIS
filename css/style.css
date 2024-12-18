@@ -1,0 +1,623 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 14vh;
+}
+
+p {
+  font-weight: 300;
+  color: #111;
+}
+
+body {
+  min-height: 1000px;
+}
+
+/* button event handler */
+.to-top {
+  background-color: #111;
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  text-decoration: none;
+  color: #ffff;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
+}
+
+.to-top.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
+  z-index: 1000;
+}
+
+/* navbar */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  padding: 40px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+}
+
+header .logo img {
+  height: 80px;
+}
+
+header .navigation {
+  position: relative;
+  display: flex;
+}
+
+header .navigation li {
+  list-style-type: none;
+  margin-left: 30px;
+}
+
+header .navigation li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+  display: block;
+  padding: 20px;
+  font-size: 20px;
+}
+
+header .primary-navigation .navigation li a:hover {
+  background-color: #03013d;
+  color: #fff;
+  border-radius: 10px;
+}
+
+/* header sticky */
+header.sticky {
+  background-color: #03013d;
+  padding: 10px 100px;
+  box-shadow: 0 5px 20px rgb(0 0 0 / 30%);
+}
+
+header.sticky .navigation li a {
+  color: #fff;
+  padding: 20px;
+}
+
+header.sticky .navigation li a:hover {
+  background-color: #ffb500;
+  color: #03013d;
+  border: 10px;
+}
+
+/* banner */
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/back.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.banner .content {
+  max-width: 900px;
+  text-align: center;
+}
+
+.banner .content h2 {
+  font-size: 5em;
+  color: #fff;
+}
+
+.banner .content p {
+  font-size: 1em;
+  color: #fff;
+}
+
+/* tambah class untuk button */
+
+.banner .content .btn-banner,
+.product .btn-product {
+  font-size: 1em;
+  color: #fff;
+  background-color: #03013d;
+  display: inline-block;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+/* animasi untuk button */
+.banner .content .btn-banner:hover,
+.product .btn-product:hover {
+  transform: scale(0.96);
+}
+
+/* section about */
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+}
+
+.about-section {
+  background: url(../img/bg.png) no-repeat left;
+  background-size: 65%;
+  background-color: #fdfdfd;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.inner-container {
+  width: 65%;
+  height: 500px;
+  float: right;
+  background-color: #fdb407;
+  padding: 70px 100px 100px 100px;
+  box-shadow: 0 5px 20px rgb(0 0 0 / 30%);
+  border-radius: 15px;
+}
+
+.inner-container h1 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.text {
+  font-size: 1.2rem;
+  color: #03013d;
+  /* line-height: 30px; */
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+/* product section */
+
+.product {
+  width: 95%;
+  /* letter-spacing: 1px; */
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto;
+}
+.product h3 {
+  font-size: 3rem;
+}
+
+.product .row {
+  margin-top: 20px;
+}
+.product .row .col-md-3 {
+  margin: 30px 0;
+}
+.product .product-buttom h3 {
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.product .row .product-top {
+  height: 250px;
+}
+
+.product .row .product-top img {
+  width: 100%;
+  height: 100%;
+}
+
+.product-button {
+  margin-top: 20px;
+}
+
+.product .row .col-md-3 a {
+  color: #03013d;
+  transition: 0.3s;
+}
+
+.product .row .col-md-3 a:hover {
+  color: red;
+}
+
+/* section client */
+.client {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/back.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.client-wrap {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.client-wrap h1 {
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.client-in {
+  width: 100%;
+  height: auto;
+}
+
+.client-in ul {
+  padding: 0;
+  margin: 0;
+}
+
+.client-in ul li {
+  list-style: none;
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  /* box-shadow: 0px 0px 3px -1px #f1f1f1; */
+  transition: 0.5s;
+}
+.client-in ul li img {
+  width: 100%;
+  height: 70%;
+}
+
+/* section footer */
+
+footer {
+  background: #03013d;
+  padding-top: 50px;
+}
+
+.footer-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+}
+
+.footer-content-text {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  /* margin: 20px; */
+}
+
+.footer-content h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #f3f3f3;
+}
+
+.footer-content-text p {
+  /* width: 190px; */
+  width: 100%;
+  margin: auto;
+  padding: 7px;
+  color: #f1f1f1;
+}
+.footer-content-text p i {
+  margin-right: 7px;
+}
+
+.buttom-bar {
+  background-color: #ffb500;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 50px;
+}
+
+.buttom-bar p {
+  color: #03013d;
+  margin: 0;
+  font-size: 16px;
+  padding: 7px;
+}
+
+/* responsive */
+
+@media (max-width: 1200px) {
+  header,
+  header.sticky {
+    padding: 20px 20px;
+  }
+  /* about section responsive */
+  .about .inner-container {
+    width: 67%;
+  }
+  .about .inner-container h1 {
+    font-size: 28px;
+  }
+
+  .about .text {
+    font-size: 1rem;
+    line-height: 30px;
+  }
+}
+@media (max-width: 1029px) {
+  header,
+  header.sticky {
+    padding: 20px 20px;
+  }
+
+  /* about section responsive */
+  .about .inner-container {
+    width: 75%;
+  }
+  .about .inner-container h1 {
+    font-size: 28px;
+  }
+
+  .about .text {
+    font-size: 1rem;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  /* ----------- navigasi responsive ---------- */
+
+  /* header */
+  header,
+  header.sticky {
+    padding: 10px 20px;
+  }
+
+  header .navigation {
+    display: none;
+  }
+
+  header.sticky .navigation.active {
+    background-color: #03013d;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 30%);
+  }
+
+  /* Munculkan menu setelah active */
+  header .navigation.active {
+    width: 100%;
+    height: calc(100% - 25%);
+    /* calc artinya kita bisa menggunakan operator aritmatika didalamahnya
+      kali , bagi , kurang, tambah dll */
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 90px;
+    left: 0;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    transition: 0.5s;
+  }
+
+  header .navigation li {
+    margin-left: 0;
+    padding: 7px;
+  }
+
+  header .navigation li a {
+    /* color: #111; */
+    font-size: 2em;
+  }
+
+  /* munculkan menutoggle */
+  .menuToggle {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    background-image: url(../img/menu.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  /* munculkan button exit */
+  .menuToggle.active {
+    background-image: url(../img/close.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .banner .content h2 {
+    font-size: 3em;
+  }
+
+  /* about section responsive */
+
+  .about .inner-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 830px) {
+  header .navigation {
+    display: none;
+  }
+
+  header.sticky .navigation.active {
+    background-color: #03013d;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 30%);
+  }
+  header.sticky .navigation.active a {
+    padding: 2px;
+  }
+
+  /* Munculkan menu setelah active */
+  header .navigation.active {
+    width: 100%;
+    height: calc(100% - 50%);
+    /* calc artinya kita bisa menggunakan operator aritmatika didalamahnya
+      kali , bagi , kurang, tambah dll */
+    backdrop-filter: blur(5px);
+    /* background-color: #03013d; */
+    position: fixed;
+    top: 90px;
+    left: 0;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    transition: 0.5s;
+  }
+
+  header .navigation.active a {
+    padding: 2px;
+  }
+
+  header .navigation li {
+    padding: 7px;
+  }
+
+  header .navigation li a {
+    /* color: #111; */
+    font-size: 2em;
+  }
+
+  /* munculkan menutoggle */
+  .menuToggle {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    background-image: url(../img/menu.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  /* munculkan button exit */
+  .menuToggle.active {
+    background-image: url(../img/close.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* hero section responsive */
+  .banner .content h2 {
+    font-size: 3em;
+  }
+
+  /* about section responsive */
+
+  .about .inner-container {
+    width: 85%;
+  }
+}
+
+@media (max-width: 760px) {
+  /* hero section responsive */
+  .banner .content h2 {
+    font-size: 3em;
+  }
+
+  /* about section responsive */
+
+  .about .inner-container {
+    padding: 70px 20px;
+    width: 100%;
+  }
+
+  /* product section responsive */
+
+  .product .row .product-top {
+    height: 400px;
+  }
+
+  .product .row .product-top img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* footer section responsive */
+  .footer-container .footer-content .footer-content-text {
+    display: grid;
+  }
+}
+
+@media (max-width: 700px) {
+  /* hero section responsive */
+  .banner .content h2 {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 650px) {
+  .inner-container .text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* hero section responsive */
+  .banner .content h2 {
+    font-size: 2em;
+  }
+
+  /* about section responsive */
+  .about .inner-container h1 {
+    font-size: 20px;
+  }
+
+  .about .inner-container .text {
+    font-size: 0.8rem;
+  }
+
+  /* client section responsive */
+}
+
+@media (max-width: 360px) {
+  .about .inner-container {
+    padding: 20px 15px;
+  }
+  .inner-container .text {
+    font-size: 0.9rem;
+  }
+}
